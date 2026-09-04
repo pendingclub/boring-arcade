@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "name": "boring-arcade-public-tree",
+  "repository": "pendingclub/boring-arcade",
+  "package": {
+    "name": "boring-arcade",
+    "version": "0.1.0"
+  },
+  "files": [
+    {
+      "path": "src/args.ts",
+      "mode": "0644",
+      "bytes": 4240,
+      "sha256": "3af4aa1625bb1c92b6c4bff0cf3f84424d95caf7a32b217a466de7f0c0d5ad2e"
+    },
+    {
+      "path": "src/cli.ts",
+      "mode": "0644",
+      "bytes": 7933,
+      "sha256": "29256f0cf62f0bbeb9d03e4a4dbb2217369ef0e5ea089bb2ae50b562eeb49091"
+    },
+    {
+      "path": "src/commands/doctor.ts",
+      "mode": "0644",
+      "bytes": 401,
+      "sha256": "068fe8d27449def3b083bd3e9c07ef0a4c3c885b8e7d6b4f3b9d2abb5ff30dc8"
+    },
+    {
+      "path": "src/config.ts",
+      "mode": "0644",
+      "bytes": 1247,
+      "sha256": "2ddb36781ff94395f7ecf3f36d6dba6c86071b4ccce4d416bdd13bc8e3e836ea"
+    },
+    {
+      "path": "src/device.ts",
+      "mode": "0644",
+      "bytes": 5517,
+      "sha256": "ebae3a25d5d5a3eaed9c4902779980c0af1441551825c2a4d000490dbabcb234"
+    },
+    {
+      "path": "src/games.ts",
+      "mode": "0644",
+      "bytes": 14894,
+      "sha256": "168659e3f9fb5ed6b5567dc7212f89eeb86103d8977e4de1bef036d1118dffa4"
+    },
+    {
+      "path": "src/http.ts",
+      "mode": "0644",
+      "bytes": 2239,
+      "sha256": "ceee33f56d998ce3940b20b8c88eccdf8cd9d1c7344b79099ce084c279cbf99a"
+    },
+    {
+      "path": "src/online.ts",
+      "mode": "0644",
+      "bytes": 4925,
+      "sha256": "5c4b11cf0bf02b6d45aa8967cbf0033b8e5367dde0e779f68b49a38c51e4aa39"
+    },
+    {
+      "path": "test/cli.test.mjs",
+      "mode": "0644",
+      "bytes": 2122,
+      "sha256": "4c74b21e4ad529cb25320d7850e6802cb8a306a3b86dbe623f88b492f39b4544"
+    },
+    {
+      "path": "test/game-rules.test.mjs",
+      "mode": "0644",
+      "bytes": 2558,
+      "sha256": "3dfb50c9e5221fa5eaa831ec8317eed545affd286fa537d4e970913ac1c0a281"
+    },
+    {
+      "path": "test/online.test.mjs",
+      "mode": "0644",
+      "bytes": 6224,
+      "sha256": "46879f04656b79cd894b96fc969275e65881369abd4256a1b998c839372351fd"
+    },
+    {
+      "path": "src/shared/game-rules.ts",
+      "mode": "0644",
+      "bytes": 20835,
+      "sha256": "e9494ef9ecbed5ae29946683fc551aef6715cdd8b8167c1c1fc0526aa7d77638"
+    },
+    {
+      "path": "src/shared/index.ts",
+      "mode": "0644",
+      "bytes": 511,
+      "sha256": "2c789e7e6d7c265575dee4891adcfcfae9c078bd4db25cb8edbf55ad4f728b2e"
+    },
+    {
+      "path": "package.json",
+      "mode": "0644",
+      "bytes": 1200,
+      "sha256": "0f1a43b1d277d33836716688726f09f317f9150d33abdb334e09d20e31d6c50f"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "0644",
+      "bytes": 664,
+      "sha256": "fcb47fcd84399d2db396327d91f700e31be9c0cae3af096c263dd5012314b579"
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "mode": "0644",
+      "bytes": 2021,
+      "sha256": "8fda81daefffe0f2c13caf663d8938662e68d9072614dd0ec7dde0daeb968ef5"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "0644",
+      "bytes": 72,
+      "sha256": "c1b63425c8b5f51a2d2b7f1de29164c0c71207e63cd74537df1a02f928f0e38a"
+    },
+    {
+      "path": ".npmrc",
+      "mode": "0644",
+      "bytes": 101,
+      "sha256": "8a1f9170e556e813729316ecf5390cdb9eb0d71d9689614de08ccce4108644cd"
+    },
+    {
+      "path": ".nvmrc",
+      "mode": "0644",
+      "bytes": 8,
+      "sha256": "4137094e7792cb49fe1afddc3f87208f0ef4adfef7d3acd1def0198786d393c2"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "bytes": 1069,
+      "sha256": "05eb28597077612d77db1339f92d782323749d61e66336036770b1c8a36767f8"
+    },
+    {
+      "path": "README.md",
+      "mode": "0644",
+      "bytes": 1472,
+      "sha256": "7dee3f9fd7cb26e93d56cee9613f3101e3d537bc143ad2b52c611b2b5baff7ab"
+    },
+    {
+      "path": "scripts/verify-package.mjs",
+      "mode": "0644",
+      "bytes": 2927,
+      "sha256": "cf615328c4d3e99840973ba05565a9d6dfb8832f4a01a7091b4a06fa45c518c5"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "0644",
+      "bytes": 17943,
+      "sha256": "54ac788db68ee3449f6239cb787041d857b1298c9383058720db83287ddbfeae"
+    }
+  ]
+}

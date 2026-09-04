@@ -1,0 +1,43 @@
+{
+  "name": "boring-arcade",
+  "version": "0.1.0",
+  "description": "Three deterministic terminal games for AI coding wait time.",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pendingclub/boring-arcade.git"
+  },
+  "homepage": "https://github.com/pendingclub/boring-arcade#readme",
+  "bugs": {
+    "url": "https://github.com/pendingclub/boring-arcade/issues"
+  },
+  "files": [
+    "dist/cli.js"
+  ],
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "bin": {
+    "boring-arcade": "dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js",
+    "prepack": "npm run build && node -e \"require('node:fs').chmodSync('dist/cli.js', 0o755)\"",
+    "start": "node dist/cli.js",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "release:check": "node scripts/verify-package.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "zod": "4.4.3"
+  }
+}
