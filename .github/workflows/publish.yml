@@ -1,0 +1,69 @@
+name: Publish boring-arcade
+
+on:
+  push:
+    tags:
+      - boring-arcade-v*.*.*
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: npm-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: npm-production
+    env:
+      EXPECTED_PACKAGE: boring-arcade
+      NPM_CLI_VERSION: 11.19.1
+      REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - name: Check out release tag
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://registry.npmjs.org
+
+      - name: Install an OIDC-capable npm CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --global "npm@${NPM_CLI_VERSION}"
+          test "$(npm --version)" = "$NPM_CLI_VERSION"
+
+      - name: Verify public release tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_name=$(node -p "require('./package.json').name")
+          package_version=$(node -p "require('./package.json').version")
+          test "$package_name" = "$EXPECTED_PACKAGE"
+          test "$GITHUB_REF_NAME" = "${package_name}-v${package_version}"
+          test "$REPOSITORY_VISIBILITY" = public
+          git merge-base --is-ancestor "$GITHUB_SHA" "origin/$DEFAULT_BRANCH"
+
+      - name: Install, test, build, and inspect the package
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run build
+          npm run typecheck
+          npm test
+          chmod 0755 dist/cli.js
+          npm run release:check
+
+      - name: Publish with npm Trusted Publishing
+        shell: bash
+        run: npm publish --access public --provenance
